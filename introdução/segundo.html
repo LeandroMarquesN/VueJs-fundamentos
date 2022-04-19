@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeira App VueJs</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-on:input="alterarTitulo">
+        <p>{{ titulo }}</p>
+        <p>{{ firstName + ' @ '+lastName}}</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                titulo: 'Hello World! Bem vindo Vuejs',
+                firstName: 'Leandro',
+                lastName: "Marques",
+            },
+            methods : {
+		    alterarTitulo(envent) {
+			    this.titulo = event.target.value
+		}
+	}
+        })
+    </script>
+    
+</body>
+</html>
